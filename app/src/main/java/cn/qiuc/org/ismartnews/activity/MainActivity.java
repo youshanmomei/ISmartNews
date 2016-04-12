@@ -1,5 +1,6 @@
-package cn.qiuc.org.ismartnews;
+package cn.qiuc.org.ismartnews.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.animation.AlphaAnimation;
@@ -9,13 +10,14 @@ import android.view.animation.RotateAnimation;
 import android.view.animation.ScaleAnimation;
 import android.widget.RelativeLayout;
 
+import cn.qiuc.org.ismartnews.R;
 import cn.qiuc.org.ismartnews.util.LogUtil;
 import cn.qiuc.org.ismartnews.util.SharedPreferencesUtil;
 
 public class MainActivity extends AppCompatActivity {
 
     private static final String TAG = "MainActivity";
-    private static final String IS_APP_FIRST_OPEN = "is_app_first_open";
+    public static final String IS_APP_FIRST_OPEN = "is_app_first_open";
     private RelativeLayout rl_welcome_bg;
 
     @Override
@@ -76,10 +78,10 @@ public class MainActivity extends AppCompatActivity {
             boolean isFirstOpen = SharedPreferencesUtil.getBoolean(getApplicationContext(), IS_APP_FIRST_OPEN, true);
             if (isFirstOpen) {
                 LogUtil.d(TAG, "第一次打开，跳转到引导界面");
-//                startActivity(new Intent(MainActivity.this,GuideUI.class));
+                startActivity(new Intent(MainActivity.this, GuideUI.class));
             } else {
                 LogUtil.d(TAG, "不是第一次打开，跳转到主界面");
-//                startActivity(new Intent(MainActivity.this, MainUI.class));
+                startActivity(new Intent(MainActivity.this, MainUI.class));
             }
 
             finish();
