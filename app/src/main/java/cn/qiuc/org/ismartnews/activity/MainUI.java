@@ -1,15 +1,47 @@
 package cn.qiuc.org.ismartnews.activity;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
+import android.view.Window;
+
+import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu;
+import com.jeremyfeinstein.slidingmenu.lib.app.SlidingFragmentActivity;
 
 import cn.qiuc.org.ismartnews.R;
 
-public class MainUI extends AppCompatActivity {
+public class MainUI extends SlidingFragmentActivity {
+
+    private static final String LEFT_TAG = "left_tag";
+    private static final String MAIN_TAG = "main_tag";
+    private FragmentManager fragmentManager;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+
+        //set left menu
+        setBehindContentView(R.layout.left);
+        //set content
         setContentView(R.layout.activity_main_ui);
+        SlidingMenu slidingMenu = getSlidingMenu();
+        slidingMenu.setMode(SlidingMenu.LEFT);
+        slidingMenu.setTouchModeAbove(SlidingMenu.TOUCHMODE_FULLSCREEN);
+        //set the width of the text
+        slidingMenu.setBehindOffset(200);
+
+        initFragment();
+
     }
+
+    private void initFragment() {
+        fragmentManager = getSupportFragmentManager();
+        FragmentTransaction transaction = fragmentManager.beginTransaction();
+        transaction.replace(R.id.rl_left, new Fragment(), LEFT_TAG);
+        transaction.replace(R.id.rl_main, new Fragment(), MAIN_TAG);
+        transaction.commit();
+    }
+
 }
