@@ -10,6 +10,8 @@ import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu;
 import com.jeremyfeinstein.slidingmenu.lib.app.SlidingFragmentActivity;
 
 import cn.qiuc.org.ismartnews.R;
+import cn.qiuc.org.ismartnews.fragment.ContentFragment;
+import cn.qiuc.org.ismartnews.fragment.LeftFragment;
 
 public class MainUI extends SlidingFragmentActivity {
 
@@ -44,4 +46,11 @@ public class MainUI extends SlidingFragmentActivity {
         transaction.commit();
     }
 
+    public LeftFragment getLeftFragment() {
+        return (LeftFragment) fragmentManager.findFragmentByTag(LEFT_TAG);
+    }
+
+    public ContentFragment getContentFragment() {
+        return (ContentFragment) fragmentManager.findFragmentByTag(MAIN_TAG);
+    }
 }
