@@ -16,7 +16,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".activity.GuideUI" />
-        <activity android:name=".activity.MainUI"></activity>
+        <activity android:name=".activity.MainUI" />
+        <activity android:name=".view.NscrollViewPager"></activity>
     </application>
 
 </manifest>

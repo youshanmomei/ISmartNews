@@ -12,6 +12,7 @@ import java.util.List;
 
 import cn.qiuc.org.ismartnews.R;
 import cn.qiuc.org.ismartnews.activity.MainUI;
+import cn.qiuc.org.ismartnews.base.BaseFragment;
 import cn.qiuc.org.ismartnews.bean.NewsCenterBean;
 
 /**

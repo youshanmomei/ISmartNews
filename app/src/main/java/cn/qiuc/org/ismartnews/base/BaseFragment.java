@@ -1,4 +1,4 @@
-package cn.qiuc.org.ismartnews.fragment;
+package cn.qiuc.org.ismartnews.base;
 
 import android.app.Activity;
 import android.os.Bundle;
