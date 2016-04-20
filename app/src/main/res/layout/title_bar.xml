@@ -19,7 +19,7 @@
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
         android:layout_marginLeft="5dp"
-        android:background="" />
+        android:background="@mipmap/img_menu" />
 
     <ImageButton
         android:id="@+id/ib_basepager_back"
