@@ -50,7 +50,7 @@ public class ContentFragment extends BaseFragment {
         //prepare date
         List<BasePager> pagers = new ArrayList<>();
         pagers.add(new HomePager(mContext));
-        pagers.add(new NewsCenterPager(mContext));//TODO 具体的要实现
+        pagers.add(new NewsCenterPager(mContext));
         pagers.add(new SmartServicePager(mContext));
         pagers.add(new GovaffirsPager(mContext));
         pagers.add(new SettingPager(mContext));
