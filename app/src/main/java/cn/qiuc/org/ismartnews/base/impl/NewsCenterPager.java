@@ -91,6 +91,7 @@ public class NewsCenterPager extends BasePager {
 //        menuPagers.add(new TopicDeatilPager(mContext));TODO
 //        menuPagers.add(new PhotoDetail(mContext));TODO
 //        menuPagers.add(new InterractDetailPager(mContext));TODO
+        //...
 
         //the default display details of the default view
         switchPager(0);
