@@ -17,6 +17,7 @@ import java.util.List;
 import cn.qiuc.org.ismartnews.activity.MainUI;
 import cn.qiuc.org.ismartnews.base.BasePager;
 import cn.qiuc.org.ismartnews.base.MenuDetailBasePager;
+import cn.qiuc.org.ismartnews.base.impl.menu.NewsDetailPager;
 import cn.qiuc.org.ismartnews.bean.NewsCenterBean;
 import cn.qiuc.org.ismartnews.fragment.LeftFragment;
 import cn.qiuc.org.ismartnews.util.ConstantUtils;
@@ -87,7 +88,7 @@ public class NewsCenterPager extends BasePager {
         leftFragment.setMenuData(newsCenterBean.data);
 
         menuPagers = new ArrayList<MenuDetailBasePager>();
-//        menuPagers.add(new NewsDetailPager(mContext, newsCenterBean.data.get(0).children)); TODO
+        menuPagers.add(new NewsDetailPager(mContext, newsCenterBean.data.get(0).children));
 //        menuPagers.add(new TopicDeatilPager(mContext));TODO
 //        menuPagers.add(new PhotoDetail(mContext));TODO
 //        menuPagers.add(new InterractDetailPager(mContext));TODO
