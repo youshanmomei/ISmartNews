@@ -3,6 +3,8 @@ package cn.qiuc.org.ismartnews.base.impl.menu;
 import android.content.Context;
 import android.view.View;
 
+import com.lidroid.xutils.ViewUtils;
+
 import java.util.List;
 
 import cn.qiuc.org.ismartnews.R;
@@ -27,7 +29,13 @@ public class TabDetailPager extends MenuDetailBasePager {
     @Override
     protected View initView() {
         View view = View.inflate(mContext, R.layout.tabdetail, null);
-        //TODO tabDetail
+        ViewUtils.inject(this, view);
+
+        //load carousel figure layout in the top
+        View topnews = View.inflate(mContext, R.layout.topnews, null);
+        ViewUtils.inject(this, topnews);
+
+        //TODO ...
 
 
         return null;
