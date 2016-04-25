@@ -166,7 +166,7 @@ public class RefreshListView extends ListView {
     }
 
 
-    private interface OnRefreshListener {
+    public interface OnRefreshListener {
         void onRefreshing();
 
         void onLoadingMore();
@@ -220,7 +220,12 @@ public class RefreshListView extends ListView {
 
     private boolean isLoadingMore = false;//whether to load more
 
-    private class MyOnScrollListener implements OnScrollListener {
+    public void loadMoreFinished(){
+        footer.setPadding(0, -footerHeight, 0, 0);
+        isLoadingMore = false;
+    }
+
+    class MyOnScrollListener implements OnScrollListener {
         @Override
         public void onScrollStateChanged(AbsListView view, int scrollState) {
             //Callback when status changes
