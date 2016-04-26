@@ -17,7 +17,8 @@
         </activity>
         <activity android:name=".activity.GuideUI" />
         <activity android:name=".activity.MainUI" />
-        <activity android:name=".view.NscrollViewPager"></activity>
+        <activity android:name=".view.NscrollViewPager" />
+        <activity android:name=".activity.NewsDetailUI"></activity>
     </application>
 
 </manifest>

@@ -1,6 +1,7 @@
 package cn.qiuc.org.ismartnews.base.impl.menu;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Handler;
 import android.os.Message;
@@ -30,6 +31,7 @@ import com.lidroid.xutils.view.annotation.ViewInject;
 import java.util.List;
 
 import cn.qiuc.org.ismartnews.R;
+import cn.qiuc.org.ismartnews.activity.NewsDetailUI;
 import cn.qiuc.org.ismartnews.base.MenuDetailBasePager;
 import cn.qiuc.org.ismartnews.bean.NewsCenterBean;
 import cn.qiuc.org.ismartnews.domain.TabDetailBean;
@@ -371,9 +373,9 @@ public class TabDetailPager extends MenuDetailBasePager {
                 adapter.notifyDataSetChanged();
             }
 
-//            Intent intent = new Intent(mContext, NewsDetailUI.class);TODO...
-//            intent.putExtra("url", news.url);
-//            mContext.startActivity(intent);
+            Intent intent = new Intent(mContext, NewsDetailUI.class);
+            intent.putExtra("url", news.url);
+            mContext.startActivity(intent);
         }
     }
 }
