@@ -20,7 +20,7 @@ public class PhotoDetail extends MenuDetailBasePager {
     public PhotoDetail(Context context) {
         super(context);
         bitmapUtils = BitmapHelper.getBitmapUtils(mContext);
-        imageCacheUtils = new ImageCacheUtils();
+        imageCacheUtils = new ImageCacheUtils();//TODO...
 
     }
 
