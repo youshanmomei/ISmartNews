@@ -19,7 +19,7 @@ import cn.qiuc.org.ismartnews.base.BasePager;
 import cn.qiuc.org.ismartnews.base.MenuDetailBasePager;
 import cn.qiuc.org.ismartnews.base.impl.menu.InterractDetailPager;
 import cn.qiuc.org.ismartnews.base.impl.menu.NewsDetailPager;
-import cn.qiuc.org.ismartnews.base.impl.menu.PhotoDetail;
+import cn.qiuc.org.ismartnews.base.impl.menu.PhotoDetailPager;
 import cn.qiuc.org.ismartnews.base.impl.menu.TopicDeatilPager;
 import cn.qiuc.org.ismartnews.bean.NewsCenterBean;
 import cn.qiuc.org.ismartnews.fragment.LeftFragment;
@@ -93,7 +93,7 @@ public class NewsCenterPager extends BasePager {
         menuPagers = new ArrayList<MenuDetailBasePager>();
         menuPagers.add(new NewsDetailPager(mContext, newsCenterBean.data.get(0).children));
         menuPagers.add(new TopicDeatilPager(mContext));
-        menuPagers.add(new PhotoDetail(mContext));
+        menuPagers.add(new PhotoDetailPager(mContext));
         menuPagers.add(new InterractDetailPager(mContext));
         //...
 
