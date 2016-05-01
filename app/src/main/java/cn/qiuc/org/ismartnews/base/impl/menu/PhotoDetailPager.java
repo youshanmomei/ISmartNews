@@ -34,7 +34,6 @@ import cn.qiuc.org.ismartnews.util.ImageCacheUtils;
 public class PhotoDetailPager extends MenuDetailBasePager {
 
     private final BitmapUtils bitmapUtils;
-    private final ImageCacheUtils imageCacheUtils;
     private ListView list;
     private GridView grid;
     private List<TabDetailBean.Data.News> newsData;
@@ -123,29 +122,30 @@ public class PhotoDetailPager extends MenuDetailBasePager {
             return convertView;
         }
 
-        class PhotoHolder {
-            public ImageView photo;
-            public TextView title;
+    }
+
+    class PhotoHolder {
+        public ImageView photo;
+        public TextView title;
+    }
+
+    private boolean isListType = true;
+    private ImageCacheUtils imageCacheUtils;
+
+    public void switchPhotoType(ImageButton ib_basepager_phototype) {
+        if (isListType) {
+            ib_basepager_phototype.setBackgroundResource(R.mipmap.icon_pic_list_type);
+            list.setVisibility(View.GONE);
+            grid.setVisibility(View.VISIBLE);
+            grid.setAdapter(new MyAdapter());
+            isListType = false;
+        }else{
+            ib_basepager_phototype.setBackgroundResource(R.mipmap.icon_pic_grid_type);
+            list.setVisibility(View.VISIBLE);
+            grid.setVisibility(View.GONE);
+            list.setAdapter(new MyAdapter());
+            isListType = true;
         }
 
-        private boolean isListType = true;
-        private ImageCacheUtils imageCacheUtils;
-
-        public void switchPhoto(ImageButton ib_basepager_phototype) {
-            if (isListType) {
-                ib_basepager_phototype.setBackgroundResource(R.mipmap.icon_pic_list_type);
-                list.setVisibility(View.GONE);
-                grid.setVisibility(View.VISIBLE);
-                grid.setAdapter(new MyAdapter());
-                isListType = false;
-            }else{
-                ib_basepager_phototype.setBackgroundResource(R.mipmap.icon_pic_grid_type);
-                list.setVisibility(View.VISIBLE);
-                grid.setVisibility(View.GONE);
-                list.setAdapter(new MyAdapter());
-                isListType = true;
-            }
-
-        }
     }
 }

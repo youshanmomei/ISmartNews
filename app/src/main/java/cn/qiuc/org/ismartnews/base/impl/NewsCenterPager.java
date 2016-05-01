@@ -115,11 +115,11 @@ public class NewsCenterPager extends BasePager {
         //display the photos button
         if (position == 2) {
             ib_basepager_phototype.setVisibility(View.VISIBLE);
-//            final PhotoDetailBasePager pager = menuPagers.get(2);TODO
+            final PhotoDetailPager pager = (PhotoDetailPager) menuPagers.get(2);
             ib_basepager_phototype.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-//                    pager.swithcPhotoType(ib_basepager_phototype);TODO
+                    pager.switchPhotoType(ib_basepager_phototype);
                 }
             });
         } else {
